@@ -24,7 +24,7 @@
   // and state updates need to output content.
   display: note_default_display_fn,
   // The state group to track notes in.
-  // A group acts independant (both counter and set of notes)
+  // A group acts independent (both counter and set of notes)
   // from other groups.
   group: note_default_group
 ) = {
@@ -137,7 +137,7 @@ These notes won't be printed on this page, so they accumulate onto next page.
 
 - Orange #note[A Color]
 - Blue #note[A Color]
-// Notice that the "Citation needed" get's a new index
+// Notice that the "Citation needed" gets a new index
 // because we've re-used it since we printed the initial "Citation needed"
 - All colors are great #note[Citation needed]
 #notes()
