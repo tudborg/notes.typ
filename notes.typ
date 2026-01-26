@@ -72,7 +72,10 @@
 //
 
 #let render_notes(fn, group: note_default_group, reset: true, reset_counter: false) = {
-  locate(loc => fn(get_notes(loc, group: group)))
+  context {
+    fn(get_notes(here(), group: group))
+  }
+  
   if reset {
     reset_notes(group: group, reset_counter: reset_counter)
   }
@@ -80,7 +83,10 @@
 
 // Create a new note at the current location
 #let note(note, ..args) = {
-  locate((loc) => add_note(loc, note, ..args))
+  context {
+    let loc = here() 
+    add_note(loc, note, ..args)
+  }
 }
 
 // The quick-start option that outputs something useful by default.
